@@ -35,6 +35,12 @@
       "name": "Monstera Deliciosa",
       "image": "./images/monstera.jpg",
       "price": 25.99
+    },
+    {
+      "name": "Test",
+      "image": "./images/pilea.jpg",
+      "price": "0.02",
+      "id": 7
     }
   ]
 }
