@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
+import UpdatePlantPrice from "./UpdatePlantPrice";
 
 function PlantPage() {
 
   const [plants, setPlants] = useState([]); // Set the plants state to an empty array
   const [search, setSearch] = useState(""); // Set the search state to an empty string
+  const [selectedPlant, setSelectedPlant] = useState({}); // Set the selectedPlant state to an empty object
 
   // Fetch the plants from the server
   useEffect(() => {
@@ -26,6 +28,31 @@ function PlantPage() {
       });
   }, []);
 
+  // Save the selected plant to the selectedPlant state when the user clicks the "Update Price" button
+  const handleUpdatePlantPriceClick = (plant) => {
+    setSelectedPlant(plant);
+  }
+
+  // Save the change to the plant price from the price input field from the UpdatePlantPrice component to the selectedPlant state
+  const handleUpdatedPlantPrice = (name, value) => {
+    setSelectedPlant({
+      ...selectedPlant,
+      [name]: value,
+    });
+  }
+
+  // Update the price of the selected plant on the page after clicking the "Update Plant Price" button
+  const handleUpdatePlantPriceOnPage = (updatedPlant) => {
+    const updatedPlants = plants.map((plant) => {
+      if (plant.id === updatedPlant.id) {
+        return updatedPlant;
+      } else {
+        return plant;
+      }
+    });
+    setPlants(updatedPlants);
+  }
+
   // Delete a plant from the list
   const handleDeletePlant = (id) => {
     const updatedPlants = plants.filter((plant) => plant.id !== id);
@@ -37,7 +64,7 @@ function PlantPage() {
     setPlants([...plants, newPlant]);
   }
 
-  // Update the search term
+  // Update the search term in the search state
   const handleSearch = (e) => {
     setSearch(e.target.value);
   }
@@ -48,8 +75,9 @@ function PlantPage() {
   return (
     <main>
       <NewPlantForm onAddPlant={handleAddPlant} />
+      <UpdatePlantPrice selectedPlant={selectedPlant} onUpdatedPlantPrice={handleUpdatedPlantPrice} onUpdatePlantPriceOnPage={handleUpdatePlantPriceOnPage} />
       <Search search={search} onHandleSearch={handleSearch} />
-      <PlantList plants={filteredPlants} onDeletePlant={handleDeletePlant} />
+      <PlantList plants={filteredPlants} onDeletePlant={handleDeletePlant} onUpdatedPlantPriceClick={handleUpdatePlantPriceClick} />
     </main>
   );
 }

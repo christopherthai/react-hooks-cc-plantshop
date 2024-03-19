@@ -2,6 +2,7 @@ import React from "react";
 
 function Search({ search, onHandleSearch }) {
 
+  // Handle the change event on the search input field and pass the search value to the PlantPage component
   const handleChange = (e) => {
     onHandleSearch(e);
   }

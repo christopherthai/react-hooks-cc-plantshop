@@ -23,6 +23,7 @@ function NewPlantForm({ onAddPlant }) {
   // Add a new plant to the server
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: {
