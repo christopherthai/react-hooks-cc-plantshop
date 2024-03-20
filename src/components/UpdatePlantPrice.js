@@ -18,13 +18,13 @@ function UpdatePlantPrice({ selectedPlant, onUpdatedPlantPrice, onUpdatePlantPri
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ price: price }), // Send the updated price to the server
+      body: JSON.stringify({ price: parseFloat(price) }), // Send the updated price to the server
     })
       .then((response) => {
         if (response.ok) {
           return response.json(); // Will be called if the server returns a success
         } else {
-          console.error("Error updating plant price"); // Will be called if the server returns an error
+          console.error("Error updating plant price");// Will be called if the server returns an error
         }
       })
       .then((updatedPlant) => {

@@ -4,31 +4,31 @@
       "id": 1,
       "name": "Aloe",
       "image": "./images/aloe.jpg",
-      "price": "26.26"
+      "price": 25
     },
     {
       "id": 2,
       "name": "ZZ Plant",
       "image": "./images/zz-plant.jpg",
-      "price": "51"
+      "price": 52
     },
     {
       "id": 3,
       "name": "Pilea peperomioides",
       "image": "./images/pilea.jpg",
-      "price": "26.32"
+      "price": 26.32
     },
     {
       "id": 4,
       "name": "Pothos",
       "image": "./images/pothos.jpg",
-      "price": "11.13"
+      "price": 17
     },
     {
       "id": 5,
       "name": "Jade",
       "image": "./images/jade.jpg",
-      "price": "20"
+      "price": 23
     },
     {
       "id": 6,
@@ -39,8 +39,20 @@
     {
       "name": "Test",
       "image": "./images/pilea.jpg",
-      "price": "0.02",
-      "id": 7
+      "price": 2.5,
+      "id": 8
+    },
+    {
+      "name": "Test",
+      "image": "./images/pilea.jpg",
+      "price": 0.03,
+      "id": 9
+    },
+    {
+      "name": "test 5",
+      "image": "./images/pilea.jpg",
+      "price": 3.1,
+      "id": 10
     }
   ]
 }

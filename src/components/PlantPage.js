@@ -77,7 +77,7 @@ function PlantPage() {
       <NewPlantForm onAddPlant={handleAddPlant} />
       <UpdatePlantPrice selectedPlant={selectedPlant} onUpdatedPlantPrice={handleUpdatedPlantPrice} onUpdatePlantPriceOnPage={handleUpdatePlantPriceOnPage} />
       <Search search={search} onHandleSearch={handleSearch} />
-      <PlantList plants={filteredPlants} onDeletePlant={handleDeletePlant} onUpdatedPlantPriceClick={handleUpdatePlantPriceClick} />
+      <PlantList plants={filteredPlants} onDeletePlant={handleDeletePlant} onUpdatePlantPriceClick={handleUpdatePlantPriceClick} />
     </main>
   );
 }

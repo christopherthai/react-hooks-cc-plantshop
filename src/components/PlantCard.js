@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PlantCard({ plant, onDeletePlant, onUpdatedPlantPriceClick }) {
+function PlantCard({ plant, onDeletePlant, onUpdatePlantPriceClick }) {
 
   const { id, name, image, price } = plant; // Destructure the plant object
   const [inStock, setInStock] = useState(true); // Set the inStock state to true
@@ -12,7 +12,7 @@ function PlantCard({ plant, onDeletePlant, onUpdatedPlantPriceClick }) {
 
   // Handle the click event where the user wants to update the price of a specific plant
   const handleUpdatePlantPriceClick = () => {
-    onUpdatedPlantPriceClick(plant);
+    onUpdatePlantPriceClick(plant);
   }
 
   // Delete the plant from the server
