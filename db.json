@@ -28,7 +28,7 @@
       "id": 5,
       "name": "Jade",
       "image": "./images/jade.jpg",
-      "price": 23
+      "price": 20
     },
     {
       "id": 6,
@@ -53,6 +53,12 @@
       "image": "./images/pilea.jpg",
       "price": 3.1,
       "id": 10
+    },
+    {
+      "name": "Test",
+      "image": "./images/pilea.jpg",
+      "price": 20,
+      "id": 11
     }
   ]
 }
